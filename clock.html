@@ -198,7 +198,7 @@
         <div class="hour hour-10">10</div>
         <div class="hour hour-11">11</div>
         <div class="hour hour-12">12</div>
-        <div class="brand">BULOVA</div>
+        <div class="brand">CINEREOUS</div>
 
         <div class="minute-hand-wrapper" id="minute">
             <div class="minute-hand">
@@ -231,7 +231,7 @@
             d = new Date();
             second = d.getSeconds() * 6;
             minute = d.getMinutes() * 6;
-            hour = (d.getHours() % 12 + d.getMinutes() / 60) * 30; // Adjust for hour hand
+            hour = (d.getHours() % 12 + d.getMinutes() / 60) * 30; 
 
             document.getElementById("second").style.transform = "rotate(" + second + "deg)";
             document.getElementById("minute").style.transform = "rotate(" + minute + "deg)";
@@ -242,26 +242,6 @@
 </html>
 
 
-    <script>
-        var second = 0;
-        var minute = 0;
-        var hour = 0;
-        var d = new Date();
-
-        setInterval(
-            function(){
-                d= new Date();
-                second = d.getSeconds() *6;
-                minute = d.getMinutes() *6;
-                hour = d.getHours() *30;
-                document.getElementById("second").style.transform = "rotate("+second +"deg)";
-                document.getElementById("minute").style.transform = "rotate("+minute +"deg)";
-                document.getElementById("hour").style.transform = "rotate("+hour +"deg)";
-            },1000
-        );
-
-
-
-    </script>
+   
 </body>
 </html>
