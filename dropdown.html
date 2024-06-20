@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown menu</title>
+    <link rel="stylesheet" href="dropdown.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <div class="main">
+        <div class="select-menu">
+            <div class="select-btn">
+                <span class="sBtn-text">Select your option</span>
+                <i class="l1">
+                    <ion-icon name="chevron-down-outline"></ion-icon>
+                </i>
+            </div>
+            <ul class="options">
+                <li class="option">
+                    <i class="l2">
+                        <ion-icon name="logo-github" style="color: black;"></ion-icon>
+                    </i>
+                    <span class="option-text">Github</span>
+                </li>
+                <li class="option">
+                    <i class="l3">
+                        <ion-icon name="logo-twitter" style="color: blue;"></ion-icon>
+                    </i>
+                    <span class="option-text">Twitter</span>
+                </li>
+                <li class="option">
+                    <i class="l4">
+                        <ion-icon name="logo-whatsapp" style="color: green;"></ion-icon>
+                    </i>
+                    <span class="option-text">Whatsapp</span>
+                </li>
+                <li class="option">
+                    <i class="l4">
+                        <ion-icon name="logo-youtube" style="color: red;"></ion-icon>
+                    </i>
+                    <span class="option-text">YouTube</span>
+                </li>
+                <li class="option">
+                    <i class="l4">
+                        <ion-icon name="logo-amazon" style="color: orange;"></ion-icon>
+                    </i>
+                    <span class="option-text">Amazon</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        const optionMenu = document.querySelector(".select-menu");
+        const selectBtn = optionMenu.querySelector(".select-btn");
+        const options = optionMenu.querySelectorAll(".option");
+        const sBtn_text = optionMenu.querySelector(".sBtn-text");
+
+        selectBtn.addEventListener("click", () => optionMenu.classList.toggle("active"));
+
+        options.forEach(option => {
+            option.addEventListener("click", () => {
+                let selectedOption = option.querySelector(".option-text").innerText;
+                sBtn_text.innerText = selectedOption;
+
+                optionMenu.classList.remove("active");
+ 
+            });
+        });
+    </script>
+</body>
+</html>
