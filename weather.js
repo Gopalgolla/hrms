@@ -1,6 +1,6 @@
 
 const apikey = "878bfbd4489b9e1c676af2429a489d55";
-const apiurl = "https://api.openweathermap.org/data/2.5/weather?&units=metric&q=hyderabad";
+const apiurl = "https://api.openweathermap.org/data/2.5/weather?&units=metric&q=";
 
 const searchBox = document.querySelector(".search input");
 const searchBtn = document.querySelector(".search button");
@@ -30,7 +30,7 @@ async function checkWeather(city){
         weatherIcon.src = "";
     }
     else if(data.weather[0].main == "Rain"){
-        weatherIcon.src = "";
+        weatherIcon.src = ""; 
     }
     else if(data.weather[0].main == "Drizzle"){
         weatherIcon.src = "";
@@ -44,6 +44,6 @@ async function checkWeather(city){
     document.querySelector(".error").style.display = "none  ";
 }
 
-searchBtn.addEventListener("click", ()=>{
+searchBox.addEventListener("click", ()=>{
     checkWeather(searchBtn.value);
 })
